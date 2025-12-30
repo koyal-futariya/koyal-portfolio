@@ -8,14 +8,11 @@ const darkGradient = 'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(90, 103, 216
 export const Separator = ({ 
   orientation = 'horizontal', 
   thickness = '2px',
-  color,
   gradient = true,
   ...props 
 }) => {
-  const defaultColor = useColorModeValue('gray.300', 'gray.600')
-  const borderColor = color || defaultColor
-  
-  const gradientBg = useColorModeValue(lightGradient, darkGradient);
+  const gradientBg = useColorModeValue(lightGradient, darkGradient)
+  const horizontalBorderColor = useColorModeValue('gray.200', 'gray.600')
   
   const gradientStyle = gradient ? {
     background: gradientBg,
@@ -30,7 +27,7 @@ export const Separator = ({
     borderTopWidth: '1px',
     borderTopStyle: 'solid',
     my: 6,
-    borderColor: useColorModeValue('gray.200', 'gray.600')
+    borderColor: horizontalBorderColor
   }
   
   const verticalStyles = {

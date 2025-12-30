@@ -1,4 +1,4 @@
-import { List, ListItem, ListIcon, Text } from '@chakra-ui/react'
+import { List, ListItem, ListIcon } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 export const Skills = () => (

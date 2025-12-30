@@ -2,7 +2,6 @@ import { Container, Box, Flex, Spinner, Text, Button, useColorModeValue } from '
 import { ExternalLinkIcon, DownloadIcon } from '@chakra-ui/icons'
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 
 const RESUME_URL = 'https://drive.google.com/file/d/12nu6df4vzIsZyn9ey2eUtmGS_bXa5Dsz/view?usp=sharing'
 const RESUME_PREVIEW_URL = 'https://drive.google.com/file/d/12nu6df4vzIsZyn9ey2eUtmGS_bXa5Dsz/preview'

@@ -3,7 +3,6 @@ import {
   Text,
   Badge,
   Flex,
-  HStack,
   Tabs,
   TabList,
   TabPanels,
@@ -13,10 +12,7 @@ import {
 } from "@chakra-ui/react"
 
 // --- Reusable “premium” highlight chip ---
-const HighlightChip = ({ children, colorScheme = "teal" }) => {
-  const border = useColorModeValue(`${colorScheme}.200`, "whiteAlpha.200")
-  const text = useColorModeValue(`${colorScheme}.800`, `${colorScheme}.100`)
-  const bg = useColorModeValue(`${colorScheme}.50`, "whiteAlpha.100")
+const HighlightChip = ({ children, border, text, bg }) => {
 
   return (
     <Badge
@@ -39,6 +35,7 @@ const HighlightChip = ({ children, colorScheme = "teal" }) => {
 }
 
 export const Education = () => {
+  const colorScheme = "teal"
   const education = [
     {
       institution: "GH Raisoni College of Engineering and Management",
@@ -82,6 +79,11 @@ export const Education = () => {
   const selectedBg = useColorModeValue("teal.50", "whiteAlpha.100")
   const hoverBorderColor = useColorModeValue("teal.300", "teal.200")
 
+  // Theme values for highlight chips
+  const chipBorder = useColorModeValue(`${colorScheme}.200`, "whiteAlpha.200")
+  const chipText = useColorModeValue(`${colorScheme}.800`, `${colorScheme}.100`)
+  const chipBg = useColorModeValue(`${colorScheme}.50`, "whiteAlpha.100")
+
   return (
     <Box
       borderWidth="1px"
@@ -102,7 +104,7 @@ export const Education = () => {
             p={3}
           >
             <Text px={3} py={2} fontSize="sm" fontWeight="800" color={muted} letterSpacing="0.4px">
-              Education
+              
             </Text>
 
             <TabList display="grid" gap={2}>
@@ -182,7 +184,13 @@ export const Education = () => {
 
                       <Flex wrap="wrap" gap={1.5}>
                         {ed.highlights.map((h, i) => (
-                          <HighlightChip key={i} colorScheme="teal">
+                          <HighlightChip 
+                            key={i} 
+                            colorScheme={colorScheme}
+                            border={chipBorder}
+                            text={chipText}
+                            bg={chipBg}
+                          >
                             {h}
                           </HighlightChip>
                         ))}

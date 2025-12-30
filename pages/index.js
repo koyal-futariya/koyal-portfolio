@@ -1,19 +1,13 @@
 import NextLink from 'next/link'
 import {
-  Link,
-  Container,
   Heading,
-  ListIcon,
   Box,
-  SimpleGrid,
   Button,
-  List,
-  ListItem,
   useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear, BioTimeline } from '../components/bio'
+import { BioTimeline } from '../components/bio'
 import { Skills } from '../components/skills'
 import TechStack from '../components/tech-stack'
 import { Projects } from '../components/projects'
@@ -21,12 +15,7 @@ import { Experience } from '../components/experience'
 import { Education } from '../components/education'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem } from '../components/grid-item'
-import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
-import { Separator } from '../components/separator'
-import GithubContributions from '../components/GithubContributions';
-import thumbYouTube from '../public/images/links/youtube.png'
-import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
+import GithubContributions from '../components/GithubContributions'
 import Image from 'next/image'
 
 const Home = () => (
@@ -88,7 +77,7 @@ const Home = () => (
         <Paragraph>
           I am a Full-Stack Web Developer with hands-on experience building real-time, high-performance web applications through internships and practical projects. I specialize in Next.js, React, Node.js, Express, MongoDB, TypeScript, and modern frontend tools like Tailwind CSS.
           <br /><br />
-          I have worked on ERP platforms, AI-powered applications, and professional websites, focusing on clean, maintainable code and scalable features that improve performance and user experience. I'm actively seeking opportunities to grow as a developer while contributing to meaningful projects.
+          I have worked on ERP platforms, AI-powered applications, and professional websites, focusing on clean, maintainable code and scalable features that improve performance and user experience. I&apos;m actively seeking opportunities to grow as a developer while contributing to meaningful projects.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -175,8 +164,8 @@ const Home = () => (
         </Heading>
         <Box mt={4}>
         <p>
-          Have a project in mind or want to discuss potential opportunities?
-          I'm always open to new connections and interesting conversations.
+          Have a project in mind or want to discuss potential opportunities?{" "}
+          I&apos;m always open to new connections and interesting conversations.
         </p>
         </Box>
 
