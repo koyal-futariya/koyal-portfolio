@@ -17,7 +17,6 @@ const HighlightChip = ({ children, colorScheme = "teal" }) => {
   const border = useColorModeValue(`${colorScheme}.200`, "whiteAlpha.200")
   const text = useColorModeValue(`${colorScheme}.800`, `${colorScheme}.100`)
   const bg = useColorModeValue(`${colorScheme}.50`, "whiteAlpha.100")
-  const dot = useColorModeValue(`${colorScheme}.500`, `${colorScheme}.300`)
 
   return (
     <Badge
@@ -80,6 +79,8 @@ export const Education = () => {
   const title = useColorModeValue("gray.900", "white")
   const panelBg = useColorModeValue("blackAlpha.50", "whiteAlpha.50")
   const leftBg = useColorModeValue("white", "gray.950")
+  const selectedBg = useColorModeValue("teal.50", "whiteAlpha.100")
+  const hoverBorderColor = useColorModeValue("teal.300", "teal.200")
 
   return (
     <Box
@@ -118,10 +119,10 @@ export const Education = () => {
                     transition="all 0.2s ease"
                     _selected={{
                       borderColor: "teal.300",
-                      bg: useColorModeValue("teal.50", "whiteAlpha.100"),
+                      bg: selectedBg,
                     }}
                     _hover={{
-                      borderColor: useColorModeValue("teal.300", "teal.200"),
+                      borderColor: hoverBorderColor,
                     }}
                   >
                     <Text fontWeight="800" color={title} fontSize="sm" noOfLines={2}>

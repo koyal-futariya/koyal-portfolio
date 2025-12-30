@@ -1,4 +1,4 @@
-import { Box, Text, Link, List, ListItem, Button, HStack, Icon, Badge, Flex, useDisclosure, Collapse } from '@chakra-ui/react'
+import { Box, Text, Link, Badge, Flex, useDisclosure, Collapse } from '@chakra-ui/react'
 import { ExternalLinkIcon, ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 const ProjectItem = ({ title, description, link, date, technologies, role }) => {

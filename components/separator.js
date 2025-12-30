@@ -1,6 +1,10 @@
 // components/separator.js
 import { Box, useColorModeValue } from '@chakra-ui/react'
 
+// Define gradient styles outside the component
+const lightGradient = 'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(66,153,225,0.5) 50%, rgba(0,0,0,0) 100%)';
+const darkGradient = 'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(90, 103, 216, 0.5) 50%, rgba(0,0,0,0) 100%)';
+
 export const Separator = ({ 
   orientation = 'horizontal', 
   thickness = '2px',
@@ -11,17 +15,10 @@ export const Separator = ({
   const defaultColor = useColorModeValue('gray.300', 'gray.600')
   const borderColor = color || defaultColor
   
-  const commonStyles = {
-    flexShrink: 0,
-    border: 'none',
-    borderColor: borderColor
-  }
+  const gradientBg = useColorModeValue(lightGradient, darkGradient);
   
   const gradientStyle = gradient ? {
-    background: useColorModeValue(
-      'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(66,153,225,0.5) 50%, rgba(0,0,0,0) 100%)',
-      'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(90, 103, 216, 0.5) 50%, rgba(0,0,0,0) 100%)'
-    ),
+    background: gradientBg,
     height: '2px',
     width: '100%',
     borderRadius: 'full'
