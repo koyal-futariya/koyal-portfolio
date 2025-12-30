@@ -26,7 +26,6 @@ const ProjectItem = ({ title, description, link, date, technologies, role }) => 
           {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </Flex>
       </Flex>
-      
       <Collapse in={isOpen} animateOpacity>
         <Box mt={4} pt={4} borderTopWidth="1px">
           <Text mb={4}>{description}</Text>
