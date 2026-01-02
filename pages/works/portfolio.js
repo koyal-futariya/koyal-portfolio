@@ -6,7 +6,6 @@ import {
   ListItem,
   Heading,
   Center,
-  Image,
   useColorMode
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
