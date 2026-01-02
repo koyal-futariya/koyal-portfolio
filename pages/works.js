@@ -1,10 +1,12 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, useColorMode } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
 
-const Works = () => (
+const Works = () => {
+  const { colorMode } = useColorMode()
+  return (
   <Layout title="Works">
     <Container>
       <Heading as="h3" fontSize={20} mb={4}>
@@ -13,7 +15,7 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
-          <WorkGridItem id="inkdrop" title="Connecting Dots ERP"  thumbnail={{
+          <WorkGridItem id="cderp" title="Connecting Dots ERP"  thumbnail={{
               src: "/images/works/cderp.png",
               width: 600,
               height: 300,
@@ -25,7 +27,7 @@ const Works = () => (
         </Section>
         <Section>
           <WorkGridItem
-            id="walknote"
+            id="crit"
             title="Connecting Roots IT"
             thumbnail={{
               src: "/images/works/crit.png",
@@ -41,7 +43,7 @@ const Works = () => (
 
         <Section delay={0.1}>
           <WorkGridItem
-            id="fourpainters"
+            id="atorix"
             title="Atorix IT Solutions"
             thumbnail={{
               src: "/images/works/atorix.png",
@@ -54,12 +56,25 @@ const Works = () => (
           Atorix IT Solutions delivers SAP consulting and implementation services for business process optimization.
           </WorkGridItem>
         </Section>
-       
+       <WorkGridItem
+            id="portfolio"
+            title="MY Portfolio"
+            thumbnail={{
+              src: `/images/works/portfolio-${colorMode === 'light' ? 'd' : 'w'}.png`,
+              width: 600,
+              height: 300,
+              placeholder: 'blur',
+              blurDataURL: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=='
+            }}
+          >
+          Atorix IT Solutions delivers SAP consulting and implementation services for business process optimization.
+          </WorkGridItem>
       </SimpleGrid>
       
     </Container>
   </Layout>
-)
+  )
+}
 
 export default Works
 export { getServerSideProps } from '../components/chakra'

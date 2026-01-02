@@ -124,7 +124,6 @@ const Home = () => (
             { name: 'Node.js', color: 'green', description: 'Backend runtime' },
             { name: 'Express', color: 'gray', description: 'Node.js framework' },
             { name: 'MongoDB', color: 'green', description: 'NoSQL database' },
-            { name: 'PostgreSQL', color: 'blue', description: 'Relational database' },
             { name: 'Tailwind CSS', color: 'teal', description: 'Utility-first CSS framework' },
             { name: 'Chakra UI', color: 'teal', description: 'Component library' },
             { name: 'Framer Motion', color: 'pink', description: 'Motion/animation library for React' },

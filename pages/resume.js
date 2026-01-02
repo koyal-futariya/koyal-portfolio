@@ -32,7 +32,7 @@ const Resume = () => {
         <title>Resume | Koyal Futariya</title>
         <meta name="description" content="Koyal Futariya's Resume" />
       </Head>
-      <Container maxW="container.lg" pt={8} minH="calc(100vh - 200px)" mb={4}>
+      <Container maxW="container.lg" pt={12} minH="calc(100vh - 200px)" mb={4}>
         <Flex justify="flex-end" mb={4} gap={3}>
           <Button
             as="a"

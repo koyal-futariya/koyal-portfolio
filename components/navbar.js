@@ -67,6 +67,7 @@ const Navbar = props => {
   }, [prevScrollY])
 
   return (
+    
     <Box
       position="fixed"
       top={0}
@@ -74,7 +75,7 @@ const Navbar = props => {
       right={0}
       as="nav"
       w="100%"
-      bg={useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(32, 32, 35, 0.8)')}
+      bg={useColorModeValue('#f0e7db', 'rgba(32, 32, 35, 0.8)')}
       style={{
         backdropFilter: 'blur(10px)',
         transition: 'transform 0.3s ease-in-out',
@@ -82,6 +83,7 @@ const Navbar = props => {
       }}
       zIndex={1000}
       {...props}
+      
     >
       <Container
         display="flex"
@@ -91,11 +93,32 @@ const Navbar = props => {
         align="center"
         justify="space-between"
         transition="all 0.3s ease-in-out"
+        position="relative"
+        _after={{
+          content: '""',
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '1px',
+          bg: useColorModeValue('gray.300', 'gray.600')
+        }}
       >
         <Flex align="center" w="100%" justify="space-between">
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            <Logo />
-          </Heading>
+          <Box display="flex" alignItems="center">
+            <Box 
+          display={{ base: 'none', md: 'block' }}
+          position="fixed"
+          left="calc((100% - 768px) / 2 - 40px)" /* Adjust based on your container width */
+          top="0"
+          bottom="0"
+          width="1px"
+          bg={useColorModeValue('gray.400', 'gray.600')}
+        />
+            <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+              <Logo />
+            </Heading>
+          </Box>
           
           <Box display="flex" alignItems="center">
             <Stack
@@ -158,7 +181,17 @@ const Navbar = props => {
                   </MenuItem>
                 </MenuList>
               </Menu>
+              
             </Box>
+            <Box 
+              display={{ base: 'none', md: 'block' }}
+              position="fixed"
+              right="calc((100% - 768px) / 2 - 40px)"
+              top="0"
+              bottom="0"
+              width="1px"
+              bg={useColorModeValue('gray.400', 'gray.600')}
+            />
           </Box>
         </Flex>
       </Container>
