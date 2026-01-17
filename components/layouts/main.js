@@ -13,7 +13,7 @@ const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
 
 const Main = ({ children, router }) => {
   return (
-    <Box as="main" pb={8}>
+    <Box as="main" pb={8} overflowX="hidden" width="100%" maxWidth="100vw">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Koyal's homepage" />
@@ -35,39 +35,54 @@ const Main = ({ children, router }) => {
 
       <NavBar path={router.asPath} />
       
-      <Box width="100vw" position="relative" left="50%" right="50%" ml="-50vw" mr="-50vw">
-       
+      <Box 
+        width="100%" 
+        display={{ base: 'none', md: 'block' }}
+        overflowX="hidden"
+      >
+        {/* This box is kept for potential future use but hidden on mobile */}
       </Box>
 
-      <Box display="flex" width="100%" justifyContent="center">
-        {/* Left vertical separator */}
+      <Box display="flex" width="100%" justifyContent="center" px={{ base: 4, md: 0 }}>
+        {/* Left vertical separator - only visible on md and up */}
         <Box 
           display={{ base: 'none', md: 'block' }}
           position="fixed"
-          left="calc((100% - 768px) / 2 - 40px)" /* Adjust based on your container width */
+          left={{ base: 4, md: 'calc((100% - 768px) / 2 - 40px)' }}
           top="0"
           bottom="0"
           width="1px"
           bg={useColorModeValue('gray.400', 'gray.600')}
         />
         
-        <Container maxW="container.md" pt={2}>
-          {/* Add padding to account for fixed navbar */}
-          <Box h="1px" /> {/* This acts as a spacer for the fixed navbar */}
+        <Container 
+          maxW="container.md" 
+          pt={{ base: 4, md: 2 }}
+          px={{ base: 0, md: 4 }}
+        >
+          <Box h={{ base: '60px', md: '1px' }} /> {/* Larger spacer for mobile navbar */}
 
-          {!router.asPath.startsWith('/resume') && <LazyVoxelDog />}
+          {!router.asPath.startsWith('/resume') && (
+            <Box px={{ base: 4, md: 0 }}>
+              <LazyVoxelDog />
+            </Box>
+          )}
 
-          {/* Main page content with side padding */}
-          <Box px={{ base: 4, md: 1 }} pt={6}>
+          {/* Main page content with responsive padding */}
+          <Box 
+            px={{ base: 4, md: 1 }} 
+            pt={{ base: 4, md: 6 }}
+            pb={6}
+          >
             {children}
           </Box>
         </Container>
 
-        {/* Right vertical separator */}
+        {/* Right vertical separator - only visible on md and up */}
         <Box 
           display={{ base: 'none', md: 'block' }}
           position="fixed"
-          right="calc((100% - 768px) / 2 - 40px)" /* Adjust based on your container width */
+          right={{ base: 4, md: 'calc((100% - 768px) / 2 - 40px)' }}
           top="0"
           bottom="0"
           width="1px"
@@ -75,7 +90,11 @@ const Main = ({ children, router }) => {
         />
       </Box>
 
-      <Box width="100vw" position="relative" left="50%" right="50%" ml="-50vw" mr="-50vw" mt={10}>
+      <Box 
+        width="100%" 
+        mt={{ base: 6, md: 10 }}
+        overflowX="hidden"
+      >
         <Separator />
       </Box>
       <Footer mt={5} />

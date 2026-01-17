@@ -1,7 +1,7 @@
-import { Container, Box, Flex, Spinner, Text, Button, useColorModeValue } from '@chakra-ui/react'
+import { Container, Box, Flex, Spinner, Text, Button, useColorModeValue, useBreakpointValue } from '@chakra-ui/react'
 import { ExternalLinkIcon, DownloadIcon } from '@chakra-ui/icons'
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const RESUME_URL = 'https://drive.google.com/file/d/12nu6df4vzIsZyn9ey2eUtmGS_bXa5Dsz/view?usp=sharing'
 const RESUME_PREVIEW_URL = 'https://drive.google.com/file/d/12nu6df4vzIsZyn9ey2eUtmGS_bXa5Dsz/preview'
@@ -9,17 +9,37 @@ const RESUME_PREVIEW_URL = 'https://drive.google.com/file/d/12nu6df4vzIsZyn9ey2e
 const Resume = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [iframeHeight, setIframeHeight] = useState('1000px')
+  const isMobile = useBreakpointValue({ base: true, md: false })
+  const containerRef = useRef(null)
+  const buttonSize = useBreakpointValue({ base: 'sm', md: 'sm' })
+  const buttonVariant = useBreakpointValue({ base: 'solid', md: 'outline' })
 
   // Set iframe height based on viewport
   useEffect(() => {
     const updateHeight = () => {
-      setIframeHeight(`${window.innerHeight - 200}px`)
+      if (isMobile) {
+        // For mobile, use viewport height minus header and some padding
+        const headerHeight = 60
+        const padding = 40
+        setIframeHeight(`${window.innerHeight - headerHeight - padding}px`)
+      } else {
+        // For desktop, keep original calculation
+        const headerHeight = 60 // Approx height of header
+        const buttonGroupHeight = 100 // Approx height of button group
+        const padding = 80 // Additional padding
+        const calculatedHeight = window.innerHeight - headerHeight - buttonGroupHeight - padding
+        setIframeHeight(Math.max(600, calculatedHeight).toString())
+      }
     }
     
     updateHeight()
+    const resizeTimer = setTimeout(updateHeight, 100) // Small delay to ensure proper calculation
     window.addEventListener('resize', updateHeight)
     
-    return () => window.removeEventListener('resize', updateHeight)
+    return () => {
+      clearTimeout(resizeTimer)
+      window.removeEventListener('resize', updateHeight)
+    }
   }, [])
 
   const handleIframeLoad = () => {
@@ -32,16 +52,30 @@ const Resume = () => {
         <title>Resume | Koyal Futariya</title>
         <meta name="description" content="Koyal Futariya's Resume" />
       </Head>
-      <Container maxW="container.lg" pt={12} minH="calc(100vh - 200px)" mb={4}>
-        <Flex justify="flex-end" mb={4} gap={3}>
+      <Container 
+        maxW="container.lg" 
+        pt={{ base: 4, md: 12 }} 
+        px={{ base: 0, md: 4 }}
+        minH={{ base: 'calc(100vh - 100px)', md: 'calc(100vh - 200px)' }}
+        mb={4}
+        ref={containerRef}
+      >
+        <Flex 
+          justify={{ base: 'center', md: 'flex-end' }}
+          flexWrap="wrap"
+          gap={3} 
+          px={{ base: 4, md: 0 }}
+          mb={4}
+        >
           <Button
             as="a"
             href={RESUME_URL}
             target="_blank"
             rightIcon={<ExternalLinkIcon />}
             colorScheme="teal"
-            variant="outline"
-            size="sm"
+            variant={buttonVariant}
+            size={buttonSize}
+            flex={{ base: '1 1 100%', sm: '0 1 auto' }}
             _hover={{
               textDecoration: 'none',
               transform: 'translateY(-2px)',
@@ -56,7 +90,9 @@ const Resume = () => {
             download="Koyal_Futariya_Resume.pdf"
             rightIcon={<DownloadIcon />}
             colorScheme="teal"
-            size="sm"
+            size={buttonSize}
+            variant="solid"
+            flex={{ base: '1 1 100%', sm: '0 1 auto' }}
             _hover={{
               transform: 'translateY(-2px)',
               boxShadow: 'lg',
@@ -68,12 +104,13 @@ const Resume = () => {
         
         <Box 
           position="relative"
-          borderRadius="md"
+          borderRadius={{ base: 'none', md: 'md' }}
           overflow="hidden"
-          boxShadow="xl"
+          boxShadow={{ base: 'none', md: 'xl' }}
           border="1px solid"
           borderColor={useColorModeValue('gray.200', 'gray.700')}
           bg={useColorModeValue('white', 'gray.800')}
+          mx={{ base: 0, md: 0 }}
         >
           {isLoading && (
             <Flex 
@@ -84,29 +121,45 @@ const Resume = () => {
               bottom={0} 
               justify="center" 
               align="center"
-              bg="rgba(255, 255, 255, 0.8)"
-              _dark={{
-                bg: 'rgba(26, 32, 44, 0.8)'
-              }}
+              bg={useColorModeValue('rgba(255, 255, 255, 0.9)', 'rgba(26, 32, 44, 0.9)')}
               zIndex={1}
+              flexDirection="column"
+              p={4}
+              textAlign="center"
             >
-              <Spinner size="xl" color="teal.500" />
-              <Text ml={4} fontSize="lg">Loading resume...</Text>
+              <Spinner 
+                size="sm"
+                color="teal.500" 
+                thickness="3px"
+                speed="0.65s"
+                emptyColor="gray.200"
+                mb={4}
+              />
+              <Text fontSize={{ base: 'md', md: 'lg' }} color={useColorModeValue('gray.700', 'gray.300')}>
+                Loading resume...
+              </Text>
             </Flex>
           )}
           <Box 
             as="iframe"
             src={RESUME_PREVIEW_URL}
             width="100%"
-            height={iframeHeight}
-            minH="800px"
+            height={`${iframeHeight}px`}
+            minH={{ base: 'calc(100vh - 200px)', md: '800px' }}
             onLoad={handleIframeLoad}
             style={{
               opacity: isLoading ? 0 : 1,
               transition: 'opacity 0.3s ease-in-out',
               border: 'none',
             }}
-            allow="autoplay"
+            allowFullScreen
+            loading="eager"
+            title="Koyal Futariya's Resume"
+            sx={{
+              '@media (max-width: 768px)': {
+                minHeight: 'calc(100vh - 200px)',
+              },
+            }}
           />
         </Box>
       </Container>

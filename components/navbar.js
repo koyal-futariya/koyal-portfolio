@@ -154,27 +154,12 @@ const Navbar = props => {
                   aria-label="Options"
                 />
                 <MenuList>
-                  <MenuItem as={MenuLink} href="/">
-                    About
-                  </MenuItem>
-                  <MenuItem as={MenuLink} href="/works">
-                    Works
-                  </MenuItem>
-                  <MenuItem as={MenuLink} href="https://store.craftz.dog/">
-                    Wallpapers
-                  </MenuItem>
-                  <MenuItem as={MenuLink} href="/posts">
-                    Posts
-                  </MenuItem>
-                  <MenuItem as={MenuLink} href="https://uses.craftz.dog/">
-                    Uses
-                  </MenuItem>
-                  <MenuItem as={MenuLink} href="/Resume">
+                  <MenuItem as={MenuLink} href="/resume">
                     Resume
                   </MenuItem>
                   <MenuItem
                     as={Link}
-                    href="https://github.com/craftzdog/craftzdog-homepage"
+                    href="https://github.com/koyal-futariya/koyal-portfolio"
                     target="_blank"
                   >
                     View Source

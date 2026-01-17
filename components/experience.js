@@ -78,19 +78,19 @@ export const Experience = () => {
     {
       title: "Web Developer Intern",
       company: "Atorix IT Solutions",
-      period: "03.2024 – 08.2024",
+      period: "06.2025 – 12.2025",
       description:
         "Worked on developing and maintaining web applications using modern technologies. Collaborated with the team to implement new features and improve existing functionality.",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Redux"],
+      technologies: ["React.js","Next.js", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Framer Motion"],
       // link: "https://..." // optional
     },
     {
       title: "Web Developer Intern",
       company: "Aeons Technologies",
-      period: "01.2023 – 02.2024",
+      period: "06.2024 – 08.2024",
       description:
         "Assisted in developing responsive web applications and implementing UI/UX designs. Worked closely with senior developers to learn best practices in web development.",
-      technologies: ["JavaScript", "HTML5", "CSS3", "Bootstrap", "jQuery"],
+      technologies: ["JavaScript", "HTML5", "CSS3", "React.js", "Tailwind CSS", "Framer Motion"],
       // link: "https://..." // optional
     },
   ]
@@ -98,7 +98,6 @@ export const Experience = () => {
   const handleToggle = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index))
   }
-
   return (
     <Box>
       {experiences.map((exp, index) => (

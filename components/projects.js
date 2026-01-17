@@ -105,9 +105,9 @@ export const Projects = () => {
         "Designed a clean, professional UI aligned with the brand",
       ],
       link: "https://connectingdotserp.com",
-      date: "08.2025 – Present",
-      technologies: ["Next.js", "Node.js", "MongoDB", "Express", "Redux", "Chakra UI"],
-      role: "Full Stack Developer | Led the development of core modules and integrated third-party services",
+      date: "06.2025 – 10.2025",
+      technologies: ["React.js", "Next.js", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Framer Motion"],
+      role: "Web Developer ",
     },
     {
       title: "Atorix IT",
@@ -119,9 +119,9 @@ export const Projects = () => {
         "Ensured smooth navigation, clean UI, and brand-consistent design",
       ],
       link: "https://www.atorixit.com",
-      date: "03.2024 – Present",
-      technologies: ["React", "Gatsby", "GraphQL", "Tailwind CSS", "Netlify CMS"],
-      role: "Frontend Developer | Implemented responsive design and content management system",
+      date: "11.2025 – 12.2025",
+    technologies: ["React.js", "Next.js","3js","Node.js", "Tailwind CSS", "Framer Motion"],
+      role: "Frontend Developer ",
     },
   ]
 

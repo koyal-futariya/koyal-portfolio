@@ -125,12 +125,16 @@ export default function GithubContributions({ username }) {
   }
 
   return (
-    <Box>
+    <Box w="full">
       <Heading as="h3" size="md" mb={4}>
         GitHub Contributions
       </Heading>
 
-      <Box>
+      <Box 
+        position="relative"
+        w="full"
+        maxW={{ base: '100%', md: 'fit-content' }}
+      >
         {/* Month labels */}
         <Box position="relative" height="14px" mb={1}>
           {monthLabels.map(({ month, weekIndex }, i) => {
@@ -155,7 +159,27 @@ export default function GithubContributions({ username }) {
         </Box>
 
         {/* Contribution grid */}
-        <Box display="flex" gap={`${GAP}px`}>
+        <Box 
+          display="flex" 
+          gap={`${GAP}px`}
+          overflowX={{ base: 'auto', md: 'visible' }}
+          pb={2} // Add some padding for scrollbar
+          css={{
+            '&::-webkit-scrollbar': {
+              height: '6px',
+            },
+            '&::-webkit-scrollbar-track': {
+              background: 'transparent',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: useColorModeValue('gray.300', 'gray.600'),
+              borderRadius: '3px',
+            },
+            '&::-webkit-scrollbar-thumb:hover': {
+              background: useColorModeValue('gray.400', 'gray.500'),
+            },
+          }}
+        >
           {weeks.map((week, weekIndex) => (
             <Box key={weekIndex} display="flex" flexDirection="column" gap={`${GAP}px`}>
               {week.map((day, dayIndex) => {
