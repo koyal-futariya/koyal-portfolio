@@ -15,6 +15,8 @@ export default function GithubContributions({ username }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const colorMode = useColorModeValue('light', 'dark');
+  const scrollbarThumb = useColorModeValue('gray.300', 'gray.600');
+  const scrollbarHover = useColorModeValue('gray.400', 'gray.500');
 
   useEffect(() => {
     const fetchContributions = async () => {
@@ -172,11 +174,11 @@ export default function GithubContributions({ username }) {
               background: 'transparent',
             },
             '&::-webkit-scrollbar-thumb': {
-              background: useColorModeValue('gray.300', 'gray.600'),
+              background: scrollbarThumb,
               borderRadius: '3px',
             },
             '&::-webkit-scrollbar-thumb:hover': {
-              background: useColorModeValue('gray.400', 'gray.500'),
+              background: scrollbarHover,
             },
           }}
         >

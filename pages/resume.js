@@ -13,6 +13,10 @@ const Resume = () => {
   const containerRef = useRef(null)
   const buttonSize = useBreakpointValue({ base: 'sm', md: 'sm' })
   const buttonVariant = useBreakpointValue({ base: 'solid', md: 'outline' })
+  const borderColor = useColorModeValue('gray.200', 'gray.700')
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const loadingBg = useColorModeValue('rgba(255, 255, 255, 0.9)', 'rgba(26, 32, 44, 0.9)')
+  const loadingTextColor = useColorModeValue('gray.700', 'gray.300')
 
   // Set iframe height based on viewport
   useEffect(() => {
@@ -40,7 +44,7 @@ const Resume = () => {
       clearTimeout(resizeTimer)
       window.removeEventListener('resize', updateHeight)
     }
-  }, [])
+  }, [isMobile])
 
   const handleIframeLoad = () => {
     setIsLoading(false)
@@ -108,8 +112,8 @@ const Resume = () => {
           overflow="hidden"
           boxShadow={{ base: 'none', md: 'xl' }}
           border="1px solid"
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
-          bg={useColorModeValue('white', 'gray.800')}
+          borderColor={borderColor}
+          bg={bgColor}
           mx={{ base: 0, md: 0 }}
         >
           {isLoading && (
@@ -121,7 +125,7 @@ const Resume = () => {
               bottom={0} 
               justify="center" 
               align="center"
-              bg={useColorModeValue('rgba(255, 255, 255, 0.9)', 'rgba(26, 32, 44, 0.9)')}
+              bg={loadingBg}
               zIndex={1}
               flexDirection="column"
               p={4}
@@ -135,7 +139,7 @@ const Resume = () => {
                 emptyColor="gray.200"
                 mb={4}
               />
-              <Text fontSize={{ base: 'md', md: 'lg' }} color={useColorModeValue('gray.700', 'gray.300')}>
+              <Text fontSize={{ base: 'md', md: 'lg' }} color={loadingTextColor}>
                 Loading resume...
               </Text>
             </Flex>
