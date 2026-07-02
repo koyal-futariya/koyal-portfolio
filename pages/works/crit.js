@@ -15,7 +15,7 @@ const Work = () => (
   <Layout title="CRIT India">
     <Container>
       <Title>
-        CRIT India (Connecting Roots IT) <Badge>2011-2016</Badge>
+        CRIT India (Connecting Roots IT) <Badge>Web Project</Badge>
       </Title>
 
       <P>
@@ -54,7 +54,7 @@ const Work = () => (
 
         <ListItem>
           <Meta>Stack</Meta>
-          <span>React/Next.js, HTML/CSS, JavaScript, SEO best practices</span>
+          <span>React, Next.js, Tailwind CSS, NodeJs, JavaScript, </span>
         </ListItem>
       </List>
 

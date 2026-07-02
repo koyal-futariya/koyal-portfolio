@@ -48,7 +48,7 @@ const Work = () => (
 
         <ListItem>
           <Meta>Stack</Meta>
-          <span>Next.js/React, Node.js, HTML/CSS, SEO optimization</span>
+          <span>Next.js, React, Node.js, Express,MongoDB, SEO optimization</span>
         </ListItem>
       </List>
 

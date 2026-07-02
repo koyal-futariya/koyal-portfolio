@@ -46,9 +46,21 @@ export const BioTimeline = () => {
       borderRadius="2xl"
       p={{ base: 4, md: 5 }}
     >
-      <TimelineItem year="2004">Born in India.</TimelineItem>
-      <TimelineItem year="2022 – Present">Pursuing B.Tech in Computer Science and Engineering.</TimelineItem>
-      <TimelineItem year="2025">Interned at Atorix IT Solutions.</TimelineItem>
+      <TimelineItem year="2022">
+        Started my B.Tech in Computer Science Engineering and began my journey in software development.
+      </TimelineItem>
+
+      <TimelineItem year="2024">
+        Joined <strong>Aeons Technologies</strong> as a Software Developer Intern, building responsive web applications and gaining industry experience.
+      </TimelineItem>
+
+      <TimelineItem year="2025">
+        Worked at <strong>Atorix IT Solutions</strong> as a Web Developer Intern, developing ERP platforms, backend APIs, and business websites using modern web technologies.
+      </TimelineItem>
+
+      <TimelineItem year="2026">
+        Graduated with a B.Tech in Computer Science Engineering and received an offer from <strong>Infosys</strong> as a System Engineer.
+      </TimelineItem>
 
       {/* Hide the last line extension visually */}
       <Box mt="-20px" ml="14px" h="20px" bg={bg} />

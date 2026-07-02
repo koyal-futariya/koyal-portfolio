@@ -43,17 +43,17 @@ const Works = () => {
 
         <Section delay={0.1}>
           <WorkGridItem
-            id="atorix"
-            title="Atorix IT Solutions"
+            id="tumorDetection"
+            title="Brain Tumor Detection  "
             thumbnail={{
-              src: "/images/works/atorix.png",
+              src: "/images/works/brain.png",
               width: 600,
               height: 300,
               placeholder: 'blur',
               blurDataURL: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=='
             }}
           >
-          Atorix IT Solutions delivers SAP consulting and implementation services for business process optimization.
+          Build Brain Tumor detection system using Explainable AI.
           </WorkGridItem>
         </Section>
        <WorkGridItem
@@ -67,7 +67,7 @@ const Works = () => {
               blurDataURL: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=='
             }}
           >
-          Atorix IT Solutions delivers SAP consulting and implementation services for business process optimization.
+          Portfolio, a collection of projects and experiments I have worked on.
           </WorkGridItem>
       </SimpleGrid>
       

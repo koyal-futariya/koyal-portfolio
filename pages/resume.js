@@ -3,8 +3,8 @@ import { ExternalLinkIcon, DownloadIcon } from '@chakra-ui/icons'
 import Head from 'next/head'
 import { useState, useEffect, useRef } from 'react'
 
-const RESUME_URL = 'https://drive.google.com/file/d/12nu6df4vzIsZyn9ey2eUtmGS_bXa5Dsz/view?usp=sharing'
-const RESUME_PREVIEW_URL = 'https://drive.google.com/file/d/12nu6df4vzIsZyn9ey2eUtmGS_bXa5Dsz/preview'
+const RESUME_URL = 'https://drive.google.com/file/d/1tl7pkZxavYQHajUafjQa2C6KMCo_wU-n/view?usp=sharing'
+const RESUME_PREVIEW_URL = 'https://drive.google.com/file/d/1tl7pkZxavYQHajUafjQa2C6KMCo_wU-n/preview'
 
 const Resume = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -30,9 +30,9 @@ const Resume = () => {
         // For desktop, keep original calculation
         const headerHeight = 60 // Approx height of header
         const buttonGroupHeight = 100 // Approx height of button group
-        const padding = 80 // Additional padding
+        const padding = 60 // Additional padding
         const calculatedHeight = window.innerHeight - headerHeight - buttonGroupHeight - padding
-        setIframeHeight(Math.max(600, calculatedHeight).toString())
+        setIframeHeight(Math.max(800, calculatedHeight).toString())
       }
     }
     
@@ -56,9 +56,9 @@ const Resume = () => {
         <title>Resume | Koyal Futariya</title>
         <meta name="description" content="Koyal Futariya's Resume" />
       </Head>
-      <Container 
-        maxW="container.lg" 
-        pt={{ base: 4, md: 12 }} 
+      <Container
+        maxW="container.xl"
+        pt={{ base: 4, md: 12 }}
         px={{ base: 0, md: 4 }}
         minH={{ base: 'calc(100vh - 100px)', md: 'calc(100vh - 200px)' }}
         mb={4}
@@ -90,7 +90,7 @@ const Resume = () => {
           </Button>
           <Button
             as="a"
-            href={`https://drive.google.com/uc?export=download&id=12nu6df4vzIsZyn9ey2eUtmGS_bXa5Dsz`}
+            href={`https://drive.google.com/uc?export=download&id=1tl7pkZxavYQHajUafjQa2C6KMCo_wU-n`}
             download="Koyal_Futariya_Resume.pdf"
             rightIcon={<DownloadIcon />}
             colorScheme="teal"
@@ -144,12 +144,12 @@ const Resume = () => {
               </Text>
             </Flex>
           )}
-          <Box 
+          <Box
             as="iframe"
             src={RESUME_PREVIEW_URL}
             width="100%"
             height={`${iframeHeight}px`}
-            minH={{ base: 'calc(100vh - 200px)', md: '800px' }}
+            minH={{ base: 'calc(100vh - 200px)', md: '900px' }}
             onLoad={handleIframeLoad}
             style={{
               opacity: isLoading ? 0 : 1,

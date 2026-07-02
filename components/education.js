@@ -40,10 +40,10 @@ export const Education = () => {
     {
       institution: "GH Raisoni College of Engineering and Management",
       degree: "B-Tech",
-      period: "2022 – Present",
+      period: "2022 – 2026",
       details: [
         "◦ Actively developing core skills in programming, software development, and emerging technologies while participating in academic and co-curricular activities to enhance teamwork and leadership abilities.",
-        "◦ CGPA: 7.86/10"
+        "◦ CGPA: 8.03/10"
       ],
       highlights: ["DSA", "Web Development", "Databases", "OS"],
     },
@@ -53,7 +53,7 @@ export const Education = () => {
       period: "2020 - 2022",
       details: [
         "◦ Successfully completed senior secondary education specializing in Science and Mathematics, building a strong analytical foundation.",
-        "◦ Percentage: 63.7 %"
+        "◦ Percentage: 63.67 %"
       ],
       highlights: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
     },
@@ -63,7 +63,7 @@ export const Education = () => {
       period: "2019 - 2020",
       details: [
         "◦ Successfully completed 10th Standard, building solid fundamentals in core subjects while actively engaging in co-curricular activities that contributed to overall personality development and leadership qualities.",
-        "◦ Percentage: 80.1 %"
+        "◦ Percentage: 80.2 %"
       ],
       highlights: ["Mathematics", "Science", "English"],
     },

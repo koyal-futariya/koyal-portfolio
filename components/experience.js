@@ -85,7 +85,7 @@ export const Experience = () => {
       // link: "https://..." // optional
     },
     {
-      title: "Web Developer Intern",
+      title: "Software Engineer Intern",
       company: "Aeons Technologies",
       period: "06.2024 – 08.2024",
       description:

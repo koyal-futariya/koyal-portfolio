@@ -12,42 +12,42 @@ import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => (
-  <Layout title="Atorix IT Solutions">
+  <Layout title="Brain Tumor Detection Using Explainable AI">
     <Container>
       <Title>
-        Atorix IT Solutions <Badge>2015</Badge>
+        Brain Tumor Detection Using Explainable AI <Badge>2026</Badge>
       </Title>
 
       <P>
-        Worked on the Atorix IT Solutions website, an SAP consulting and implementation partner that delivers SAP implementation, support, and integration services for businesses across multiple industries.
+        Developed a CNN-based brain tumor detection system using VGG16 with transfer learning for MRI image classification.
       </P>
       <P>
-        The site showcases Atorix capabilities such as SAP S/4HANA (ECC 6.0), SAP S/4HANA Cloud, SAP Business One, and consulting services, with a clear “Request a Consultation” lead flow for enquiries.
+        The system achieved high classification accuracy (~80%+) on medical imaging datasets and implemented Explainable AI techniques (Grad-CAM, LIME) to visualize tumor regions and improve model interpretability.
       </P>
 
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
-          <Link href="https://www.atorixit.com" target="_blank">
-            https://www.atorixit.com <ExternalLinkIcon mx="2px" />
+          <Link href="https://brain-tumor-detection-1.vercel.app" target="_blank">
+            https://brain-tumor-detection-1.vercel.app <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
 
         <ListItem>
           <Meta>Role</Meta>
-          <span>Web Developer</span>
+          <span>Researcher, Model Developer</span>
         </ListItem>
 
         <ListItem>
           <Meta>Work</Meta>
           <span>
-            Implemented responsive UI sections, optimized performance and on-page SEO, and integrated contact/consultation forms to improve lead capture.
+            Developed a CNN-based brain tumor detection model with Explainable AI techniques.
           </span>
         </ListItem>
 
         <ListItem>
           <Meta>Domain</Meta>
-          <span>SAP consulting, implementation, integration, upgrade, support</span>
+          <span>Computer vision, Deep learning, Brain tumor detection, Explainable AI</span>
         </ListItem>
 
         <ListItem>
@@ -57,7 +57,7 @@ const Work = () => (
 
         <ListItem>
           <Meta>Stack</Meta>
-          <span>HTML/CSS, JavaScript, React/Next.js, Tailwind CSS</span>
+          <span> Python, Flask, React.js, Tailwind CSS, OpenCV, TensorFlow, PyTorch</span>
         </ListItem>
       </List>
 
@@ -65,9 +65,9 @@ const Work = () => (
       <Box display="none" />
 
       {/* Replace images with your actual Atorix screenshots */}
-      <WorkImage src="/images/works/atorix.png" alt="Atorix IT Solutions website" />
-      <WorkImage src="/images/works/atorix1.png" alt="Atorix services pages" />
-      <WorkImage src="/images/works/atorix2.png" alt="Atorix contact / consultation page" />
+      <WorkImage src="/images/works/brain.png" alt="Brain Tumor Detection website" />
+      <WorkImage src="/images/works/brain1.png" alt="Atorix services pages" />
+      
     </Container>
   </Layout>
 )

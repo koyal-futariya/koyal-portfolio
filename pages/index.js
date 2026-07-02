@@ -32,8 +32,9 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
         lineHeight="shorter"
+        fontWeight="semibold"
       >
-          Hello, I&apos;m Koyal Futariya, a full-stack web developer from India.
+          Building scalable software that solves real-world problems.
         </Box>
 
       <Box display={{ md: 'flex' }} w="full">
@@ -41,7 +42,8 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Koyal Futariya
           </Heading>
-          <p>Digital Craftsman ( Full-Stack Web Developer)</p>
+          <b >Software Engineer | Full-Stack Developer</b> <br />
+          <p  lineHeight="1.3">Building scalable, secure, and high-performance web applications using React, Next.js, Node.js, Express.js, MongoDB, and JavaScript.</p>
         </Box>
         <Box
           flexShrink={0}
@@ -74,10 +76,10 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           About Me
         </Heading>
-        <Paragraph>
-          I am a Full-Stack Web Developer with hands-on experience building real-time, high-performance web applications through internships and practical projects. I specialize in Next.js, React, Node.js, Express, MongoDB, TypeScript, and modern frontend tools like Tailwind CSS.
+        <Paragraph fontSize="18px" lineHeight="1.7">
+          I am a <b>Software Engineer</b> and <b>Full-Stack Developer</b> passionate about building scalable, secure, and high-performance web applications. I specialize in <b>React, Next.js, Node.js, Express.js, MongoDB,</b> and <b>JavaScript,</b> with a strong focus on writing clean, maintainable, and efficient code.
           <br /><br />
-          I have worked on ERP platforms, AI-powered applications, and professional websites, focusing on clean, maintainable code and scalable features that improve performance and user experience. I&apos;m actively seeking opportunities to grow as a developer while contributing to meaningful projects.
+         Through internships and personal projects, I have developed ERP platforms, AI-powered applications, and business websites while gaining hands-on experience in full-stack development. I enjoy solving real-world problems, exploring modern technologies, and continuously improving my software engineering skills.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -87,7 +89,7 @@ const Home = () => (
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
           >
-            My Work
+            View Projects
           </Button>
         </Box>
       </Section>
